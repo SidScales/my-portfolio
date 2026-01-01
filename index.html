@@ -1,366 +1,329 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #137646; -webkit-text-stroke: #137646}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none}
-    span.s10 {font-kerning: none; color: #137646; background-color: #ecf1f7; -webkit-text-stroke: 0px #137646}
-    span.s11 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s12 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
-    span.s13 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharthan V | Growth Optimization & Experimentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #2563eb;
+            --accent: #7c3aed;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fcfcfd;
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.delay-100 { transition-delay: 0.1s; }
+        .reveal.delay-200 { transition-delay: 0.2s; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #d946ef 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blob-cont {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #60a5fa; }
+        .blob-2 { bottom: 10%; right: -5%; width: 400px; height: 400px; background: #c084fc; animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        #networkCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Siddharthan V | Growth Optimization &amp; Experimentation</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">@import</span><span class="s4"> </span><span class="s8">url</span><span class="s4">(</span><span class="s1">'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap'</span><span class="s4">);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">:root</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">--primary:</span><span class="s1"> </span><span class="s8">#2563eb</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">--accent:</span><span class="s1"> </span><span class="s8">#7c3aed</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">--success:</span><span class="s1"> </span><span class="s8">#10b981</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Plus Jakarta Sans'</span><span class="s4">, </span><span class="s8">sans-serif</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">scroll-behavior:</span><span class="s4"> </span><span class="s8">smooth</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#fcfcfd</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow-x:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.reveal</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s10">30px</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s1"> </span><span class="s8">all</span><span class="s1"> </span><span class="s10">0.8s</span><span class="s1"> </span><span class="s8">cubic-bezier(</span><span class="s10">0.5</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">1</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.reveal.active</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translateY(</span><span class="s10">0</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.reveal.delay-100</span><span class="s4"> { </span><span class="s2">transition-delay:</span><span class="s4"> </span><span class="s10">0.1s</span><span class="s4">; }</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.reveal.delay-200</span><span class="s4"> { </span><span class="s2">transition-delay:</span><span class="s4"> </span><span class="s10">0.2s</span><span class="s4">; }</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.gradient-text</span><span class="s4"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s4"> </span><span class="s1">linear-gradient(</span><span class="s10">135deg</span><span class="s4">, </span><span class="s1">#2563eb</span><span class="s4"> </span><span class="s10">0%</span><span class="s4">, </span><span class="s1">#7c3aed</span><span class="s4"> </span><span class="s10">50%</span><span class="s4">, </span><span class="s1">#d946ef</span><span class="s4"> </span><span class="s10">100%</span><span class="s1">)</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-size:</span><span class="s4"> </span><span class="s10">200%</span><span class="s4"> </span><span class="s10">200%</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">-webkit-background-clip:</span><span class="s4"> </span><span class="s8">text</span><span class="s4">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">-webkit-text-fill-color:</span><span class="s4"> </span><span class="s8">transparent</span><span class="s4">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">animation:</span><span class="s4"> </span><span class="s1">gradientMove</span><span class="s4"> </span><span class="s10">6s</span><span class="s4"> </span><span class="s1">ease</span><span class="s4"> </span><span class="s1">infinite</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s7">@keyframes</span><span class="s4"> </span><span class="s1">gradientMove</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">0%</span><span class="s1"> { </span><span class="s2">background-position:</span><span class="s1"> </span><span class="s10">0%</span><span class="s1"> </span><span class="s10">50%</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">50%</span><span class="s1"> { </span><span class="s2">background-position:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1"> </span><span class="s10">50%</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">100%</span><span class="s1"> { </span><span class="s2">background-position:</span><span class="s1"> </span><span class="s10">0%</span><span class="s1"> </span><span class="s10">50%</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.glass-card</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.7</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s4"> </span><span class="s8">blur(</span><span class="s10">12px</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.6</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">relative</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s8">all</span><span class="s4"> </span><span class="s1">0.4s</span><span class="s4"> </span><span class="s8">cubic-bezier(</span><span class="s1">0.175</span><span class="s4">, </span><span class="s1">0.885</span><span class="s4">, </span><span class="s1">0.32</span><span class="s4">, </span><span class="s1">1.275</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.glass-card:hover</span><span class="s4"> {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s4"> </span><span class="s1">translateY(</span><span class="s10">-8px</span><span class="s1">)</span><span class="s4"> </span><span class="s1">scale(</span><span class="s10">1.01</span><span class="s1">)</span><span class="s4">;</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">20px</span><span class="s4"> </span><span class="s1">40px</span><span class="s4"> </span><span class="s1">-10px</span><span class="s4"> </span><span class="s8">rgba(</span><span class="s1">37</span><span class="s4">, </span><span class="s1">99</span><span class="s4">, </span><span class="s1">235</span><span class="s4">, </span><span class="s1">0.15</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-color:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">59</span><span class="s1">, </span><span class="s10">130</span><span class="s1">, </span><span class="s10">246</span><span class="s1">, </span><span class="s10">0.4</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.glass-nav</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.85</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s4"> </span><span class="s8">blur(</span><span class="s10">16px</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-bottom:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.05</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.blob-cont</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s10">100vh</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s10">-1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s8">hidden</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">pointer-events:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.blob</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s10">50%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">filter:</span><span class="s1"> </span><span class="s8">blur(</span><span class="s10">80px</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">0.4</span><span class="s1">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">animation:</span><span class="s4"> </span><span class="s1">float</span><span class="s4"> </span><span class="s10">10s</span><span class="s4"> </span><span class="s1">infinite</span><span class="s4"> </span><span class="s1">ease-in-out</span><span class="s4"> </span><span class="s1">alternate</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">.blob-1</span><span class="s4"> { </span><span class="s1">top:</span><span class="s4"> </span><span class="s10">-10%</span><span class="s4">; </span><span class="s1">left:</span><span class="s4"> </span><span class="s10">-10%</span><span class="s4">; </span><span class="s1">width:</span><span class="s4"> </span><span class="s10">500px</span><span class="s4">; </span><span class="s1">height:</span><span class="s4"> </span><span class="s10">500px</span><span class="s4">; </span><span class="s1">background:</span><span class="s4"> </span><span class="s8">#60a5fa</span><span class="s4">; }</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">.blob-2</span><span class="s4"> { </span><span class="s1">bottom:</span><span class="s4"> </span><span class="s10">10%</span><span class="s4">; </span><span class="s1">right:</span><span class="s4"> </span><span class="s10">-5%</span><span class="s4">; </span><span class="s1">width:</span><span class="s4"> </span><span class="s10">400px</span><span class="s4">; </span><span class="s1">height:</span><span class="s4"> </span><span class="s10">400px</span><span class="s4">; </span><span class="s1">background:</span><span class="s4"> </span><span class="s8">#c084fc</span><span class="s4">; </span><span class="s1">animation-delay:</span><span class="s4"> </span><span class="s10">-5s</span><span class="s4">; }</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">@keyframes</span><span class="s1"> </span><span class="s8">float</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">0%</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translate(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s8">)</span><span class="s1"> </span><span class="s8">scale(</span><span class="s10">1</span><span class="s8">)</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">100%</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">translate(</span><span class="s10">30px</span><span class="s1">, </span><span class="s10">50px</span><span class="s8">)</span><span class="s1"> </span><span class="s8">scale(</span><span class="s10">1.1</span><span class="s8">)</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">#networkCanvas</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s10">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">z-index:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">0.6</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">pointer-events:</span><span class="s4"> </span><span class="s8">none</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"selection:bg-blue-100 selection:text-blue-900"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Navigation --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">nav</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed top-0 w-full z-50 glass-nav"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"navbar"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>SIDDHARTHAN</span><span class="s3">&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-blue-600"</span><span class="s3">&gt;</span><span class="s1">.V</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden md:flex space-x-10 font-bold text-[13px] uppercase tracking-[0.15em]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#home"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-blue-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Home</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#expertise"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-blue-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Expertise</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#case-studies"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hover:text-blue-600 transition-colors"</span><span class="s3">&gt;</span><span class="s4">Impact</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-6 py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition-all"</span><span class="s3">&gt;</span><span class="s4">Contact</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">nav</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Hero Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"home"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"blob-cont"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"blob blob-1"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"blob blob-2"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"networkCanvas"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-5xl text-center relative z-10 reveal active"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"inline-flex items-center px-5 py-2 mb-8 text-[11px] font-extrabold tracking-[0.2em] text-blue-700 uppercase bg-white/80 rounded-full border border-blue-100"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>Growth Optimization Manager</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-6xl md:text-8xl font-[900] mb-8 tracking-tight text-slate-900 leading-[0.95]"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>Impact Through </span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;&lt;</span><span class="s6">span</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"gradient-text"</span><span class="s3">&gt;</span><span class="s1">Experimentation.</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>Turning attribution blind spots into growth engines. Specialized in </span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">CRO, Attribution, and Operations</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1"> for high-scale product teams.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex flex-col sm:flex-row items-center justify-center gap-5"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#case-studies"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>View Case Studies</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Expertise Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"expertise"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-32 bg-white relative"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid lg:grid-cols-2 gap-20 items-center"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"relative reveal"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl md:text-5xl font-extrabold mb-8 tracking-tight"</span><span class="s3">&gt;</span><span class="s4">Strategy over </span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-blue-600"</span><span class="s3">&gt;</span><span class="s4">Vanity Metrics.</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-lg text-slate-500 mb-10 leading-relaxed font-medium"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>I bridge the gap between technical experimentation and business objectives. My methodology ensures that every test is a step toward a clearer understanding of your customer's journey.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"space-y-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-start group p-4 rounded-2xl hover:bg-slate-50 transition-colors"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-14 h-14 shrink-0 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mr-5"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"fa-solid fa-chart-line text-xl"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold text-lg"</span><span class="s3">&gt;</span><span class="s1">Incrementality Thinking</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-slate-500 text-sm"</span><span class="s3">&gt;</span><span class="s1">Validating real growth, not just tool-assigned credit.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-start group p-4 rounded-2xl hover:bg-slate-50 transition-colors"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-14 h-14 shrink-0 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mr-5"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"fa-solid fa-robot text-xl"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold text-lg"</span><span class="s3">&gt;</span><span class="s1">Automated CRO Ops</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-slate-500 text-sm"</span><span class="s3">&gt;</span><span class="s1">Scaling experimentation velocity using Make.com.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-2 gap-6 reveal delay-200"</span><span class="s3">&gt;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Tech Stack Card --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card p-8 rounded-3xl group flex flex-col h-full"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-layer-group text-blue-600 text-xl"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6"</span><span class="s3">&gt;</span><span class="s4">Tech Stack</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"space-y-4 font-bold text-slate-700"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Adobe Target</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Optimizely</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>GA4 / Clarity</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Make.com</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Core Focus Card --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card p-8 rounded-3xl mt-10 group flex flex-col h-full"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">i</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fa-solid fa-bullseye text-purple-600 text-xl"</span><span class="s3">&gt;&lt;/</span><span class="s6">i</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6"</span><span class="s3">&gt;</span><span class="s4">Core Focus</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"space-y-4 font-bold text-slate-700"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Scaling &amp; Growth</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>A/B Testing</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Funnel Analysis</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex items-center group/item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"</span><span class="s3">&gt;&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>Campaign Mgmt.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- (AI Growth Lab is hidden here) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"ai-lab"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden"</span><span class="s3">&gt;&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Case Studies --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"case-studies"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-32 bg-slate-50 relative"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-7xl mx-auto px-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-extrabold mb-16 tracking-tight reveal"</span><span class="s3">&gt;</span><span class="s4">Proven Impact</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid md:grid-cols-2 gap-10"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card p-10 rounded-[2.5rem] bg-white/80 reveal"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-2xl font-extrabold mb-4"</span><span class="s3">&gt;</span><span class="s1">Year-End Campaign Incrementality</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-slate-500 mb-8 font-medium"</span><span class="s3">&gt;</span><span class="s1">Restored spend confidence for leadership by resolving Q4 attribution gaps.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"glass-card p-10 rounded-[2.5rem] bg-white/80 reveal delay-100"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-2xl font-extrabold mb-4"</span><span class="s3">&gt;</span><span class="s1">Friction Reduction</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-slate-500 mb-8 font-medium"</span><span class="s3">&gt;</span><span class="s1">Achieved 5-10% conversion lift via GA4 insights and funnel experimentation.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Contact --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-32 bg-[#fcfcfd]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-4xl mx-auto text-center px-6 reveal"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-5xl font-[900] mb-8 tracking-tight"</span><span class="s3">&gt;</span><span class="s4">Let's build the </span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"gradient-text"</span><span class="s3">&gt;</span><span class="s4">Growth Engine.</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"mailto:siddharthanvpillai@gmail.com"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"inline-block px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>Email Me</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p10"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">// Particle animation and reveal logic</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> canvas = document.getElementById(</span><span class="s11">'networkCanvas'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> ctx = canvas.getContext(</span><span class="s11">'2d'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">let</span><span class="s1"> particles = [];</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> resize() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>canvas.width = window.innerWidth;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>canvas.height = window.innerHeight;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>window.addEventListener(</span><span class="s11">'resize'</span><span class="s1">, resize);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>resize();</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">class</span><span class="s1"> </span><span class="s12">Particle</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">constructor</span><span class="s1">() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.x = </span><span class="s12">Math</span><span class="s1">.random() * canvas.width;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.y = </span><span class="s12">Math</span><span class="s1">.random() * canvas.height;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.vx = (</span><span class="s12">Math</span><span class="s1">.random() - </span><span class="s13">0.5</span><span class="s1">) * </span><span class="s13">0.5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.vy = (</span><span class="s12">Math</span><span class="s1">.random() - </span><span class="s13">0.5</span><span class="s1">) * </span><span class="s13">0.5</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>update() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.x += </span><span class="s7">this</span><span class="s1">.vx;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">this</span><span class="s1">.y += </span><span class="s7">this</span><span class="s1">.vy;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (</span><span class="s7">this</span><span class="s1">.x &lt; </span><span class="s13">0</span><span class="s1"> || </span><span class="s7">this</span><span class="s1">.x &gt; canvas.width) </span><span class="s7">this</span><span class="s1">.vx *= -</span><span class="s13">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (</span><span class="s7">this</span><span class="s1">.y &lt; </span><span class="s13">0</span><span class="s1"> || </span><span class="s7">this</span><span class="s1">.y &gt; canvas.height) </span><span class="s7">this</span><span class="s1">.vy *= -</span><span class="s13">1</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>draw() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>ctx.fillStyle = </span><span class="s11">'rgba(59, 130, 246, 0.2)'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>ctx.beginPath();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>ctx.arc(</span><span class="s7">this</span><span class="s1">.x, </span><span class="s7">this</span><span class="s1">.y, </span><span class="s13">2</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, </span><span class="s12">Math</span><span class="s1">.</span><span class="s12">PI</span><span class="s1"> * </span><span class="s13">2</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>ctx.fill();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">for</span><span class="s1"> (</span><span class="s7">let</span><span class="s1"> i = </span><span class="s13">0</span><span class="s1">; i &lt; </span><span class="s13">50</span><span class="s1">; i++) particles.push(</span><span class="s7">new</span><span class="s1"> </span><span class="s12">Particle</span><span class="s1">());</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">function</span><span class="s1"> animate() {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>ctx.clearRect(</span><span class="s13">0</span><span class="s1">, </span><span class="s13">0</span><span class="s1">, canvas.width, canvas.height);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>particles.forEach(p =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>p.update();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>p.draw();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animate);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>animate();</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7">const</span><span class="s1"> observer = </span><span class="s7">new</span><span class="s1"> </span><span class="s12">IntersectionObserver</span><span class="s1">((entries) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>entries.forEach(entry =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s7">if</span><span class="s1"> (entry.isIntersecting) entry.target.classList.add(</span><span class="s11">'active'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}, { threshold: </span><span class="s13">0.1</span><span class="s1"> });</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelectorAll(</span><span class="s11">'.reveal'</span><span class="s1">).forEach(el =&gt; observer.observe(el));</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <span class="text-xl font-extrabold tracking-tighter text-slate-900 flex items-center gap-2">
+                SIDDHARTHAN<span class="text-blue-600">.V</span>
+            </span>
+            <div class="hidden md:flex space-x-10 font-bold text-[13px] uppercase tracking-[0.15em]">
+                <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                <a href="#expertise" class="hover:text-blue-600 transition-colors">Expertise</a>
+                <a href="#case-studies" class="hover:text-blue-600 transition-colors">Impact</a>
+                <a href="#contact" class="px-6 py-2.5 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+        <div class="blob-cont">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <canvas id="networkCanvas"></canvas>
+        
+        <div class="max-w-5xl text-center relative z-10 reveal active">
+            <div class="inline-flex items-center px-5 py-2 mb-8 text-[11px] font-extrabold tracking-[0.2em] text-blue-700 uppercase bg-white/80 rounded-full border border-blue-100">
+                Growth Optimization Manager
+            </div>
+            <h1 class="text-6xl md:text-8xl font-[900] mb-8 tracking-tight text-slate-900 leading-[0.95]">
+                Impact Through <br><span class="gradient-text">Experimentation.</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+                Turning attribution blind spots into growth engines. Specialized in <strong>CRO, Attribution, and Operations</strong> for high-scale product teams.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#case-studies" class="px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl">
+                    View Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="relative reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Strategy over <br><span class="text-blue-600">Vanity Metrics.</span></h2>
+                    <p class="text-lg text-slate-500 mb-10 leading-relaxed font-medium">
+                        I bridge the gap between technical experimentation and business objectives. My methodology ensures that every test is a step toward a clearer understanding of your customer's journey.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start group p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+                            <div class="w-14 h-14 shrink-0 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mr-5">
+                                <i class="fa-solid fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Incrementality Thinking</h4>
+                                <p class="text-slate-500 text-sm">Validating real growth, not just tool-assigned credit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start group p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+                            <div class="w-14 h-14 shrink-0 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mr-5">
+                                <i class="fa-solid fa-robot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Automated CRO Ops</h4>
+                                <p class="text-slate-500 text-sm">Scaling experimentation velocity using Make.com.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 reveal delay-200">
+                    <!-- Tech Stack Card -->
+                    <div class="glass-card p-8 rounded-3xl group flex flex-col h-full">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                            <i class="fa-solid fa-layer-group text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Tech Stack</h4>
+                        <ul class="space-y-4 font-bold text-slate-700">
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Adobe Target
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Optimizely
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                GA4 / Clarity
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Make.com
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Core Focus Card -->
+                    <div class="glass-card p-8 rounded-3xl mt-10 group flex flex-col h-full">
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                            <i class="fa-solid fa-bullseye text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">Core Focus</h4>
+                        <ul class="space-y-4 font-bold text-slate-700">
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Scaling & Growth
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                A/B Testing
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Funnel Analysis
+                            </li>
+                            <li class="flex items-center group/item">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-3 group-hover/item:scale-150 transition-transform"></span> 
+                                Campaign Mgmt.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- (AI Growth Lab is hidden here) -->
+    <section id="ai-lab" class="hidden"></section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="py-32 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-16 tracking-tight reveal">Proven Impact</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card p-10 rounded-[2.5rem] bg-white/80 reveal">
+                    <h3 class="text-2xl font-extrabold mb-4">Year-End Campaign Incrementality</h3>
+                    <p class="text-slate-500 mb-8 font-medium">Restored spend confidence for leadership by resolving Q4 attribution gaps.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[2.5rem] bg-white/80 reveal delay-100">
+                    <h3 class="text-2xl font-extrabold mb-4">Friction Reduction</h3>
+                    <p class="text-slate-500 mb-8 font-medium">Achieved 5-10% conversion lift via GA4 insights and funnel experimentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 bg-[#fcfcfd]">
+        <div class="max-w-4xl mx-auto text-center px-6 reveal">
+            <h2 class="text-5xl font-[900] mb-8 tracking-tight">Let's build the <br><span class="gradient-text">Growth Engine.</span></h2>
+            <a href="mailto:siddharthanvpillai@gmail.com" class="inline-block px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold hover:bg-blue-600 transition-all">
+                Email Me
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Particle animation and reveal logic
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.2)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
